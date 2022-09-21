@@ -31,8 +31,8 @@ app.use(session({
     resave: false,
     store: new SequelizeStore({
         db: sequelize,
-        checkExpirationInterval: 1 * 60 * 1000,  // 1 min
-        expiration: 5*  60 * 1000   //  2 min
+        checkExpirationInterval: 10 * 60 * 1000,  // 10 min
+        expiration: 10*  60 * 1000   //  10 min
       }),
     saveUninitialized: true,
     cookie: { maxAge: time },
@@ -51,6 +51,8 @@ app.use(session({
     }
     res.send(`${req.session.views} views`);
   })
+
+
 
 
   
